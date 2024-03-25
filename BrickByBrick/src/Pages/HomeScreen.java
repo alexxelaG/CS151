@@ -22,31 +22,26 @@ public class HomeScreen {
 		root.setStyle("-fx-padding: 10px;");
 		root.setAlignment(Pos.CENTER); // Align the VBox to the center
 	
+		root.setStyle("-fx-background-color: violet;"); // changes the color of the background 
 		
 		Label MainLabel = new Label("Welcome to Brick by Brick");
-		Button createAssetButton = new Button("Create Asset");
-		Button viewAssetButton = new Button("View Asset");
+		Button createAssetCategoryButton = new Button("Create New Asset Category");
+
 		
-		hbox.getChildren().addAll(createAssetButton, viewAssetButton);
+		hbox.getChildren().addAll(createAssetCategoryButton);
 		hbox.setAlignment(Pos.CENTER);
 		root.getChildren().addAll(MainLabel, hbox);
 		
 		
-		createAssetButton.setOnAction(e -> {
-			System.out.println("This is the createAssetButton");
+		createAssetCategoryButton.setOnAction(e -> {
+			System.out.println("Welcome to the Create New Asset Category Page");
 			
-			CreateAssetPage createAsset = new CreateAssetPage();
+			CreateAsset createAsset = new CreateAsset();
 			primaryStage.setScene(new Scene(createAsset.getRoot(), 400, 400));
 			primaryStage.setTitle("Create an Asset");
 		});
 		
-		viewAssetButton.setOnAction(e -> {
-			System.out.println("This is the viewAssetButton");
-			
-			ViewAssetPage viewAsset = new ViewAssetPage();
-			primaryStage.setScene(new Scene(viewAsset.getRoot(), 400, 400));
-			primaryStage.setTitle("View Assets");
-		});
+	
 		
 	}
 	

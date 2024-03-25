@@ -4,6 +4,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox; // Resolve conflict by keeping both imports
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
@@ -24,28 +25,14 @@ public class CreateAsset {
         Button homePageButton = new Button("Return to Home page");
         Button finalizeAssetButton = new Button("Create Asset");
         
-        // create text field for the name of the asset
-        Label assetNameLbl = new Label("Name of Asset Category");
-        TextField assetName = new TextField();
-
-        // Create text field for the description of the asset
-        Label assetDescriptionLbl = new Label("Description of Asset Category");
-        TextField description = new TextField();
-        
-		assetInputs.setStyle("-fx-background-color: violet;"); // changes the color of the background 
-
+        assetInputs.setStyle("-fx-background-color: violet;"); // Moved from the conflicting part to resolve conflict
 
         finalizeAssetButton.setOnAction(e -> {
-        		System.out.println(assetName.getText());
-        		System.out.println(description.getText());
-            System.out.println("Asset Category Successfully Created"); // Test to ensure button functions
-         // this function will be implemented later when we have to store the data.    
-            
+            System.out.println("Asset Category Successfully Created");
         });
 
         homePageButton.setOnAction(e -> {
             System.out.println("Back to the Homepage");
-            // No need to create a new Stage here, just get the current Stage
             Stage primaryStage = (Stage) homePageButton.getScene().getWindow();
             HomeScreen homeScreen = new HomeScreen(primaryStage);
             primaryStage.setScene(new Scene(homeScreen.getRoot(), 400, 400));
@@ -55,9 +42,13 @@ public class CreateAsset {
         buttons.getChildren().addAll(homePageButton, finalizeAssetButton);
         buttons.setAlignment(Pos.CENTER);
 
-        
+        Label assetNameLbl = new Label("Name of Asset Category");
+        TextField assetName = new TextField();
 
-        assetInputs.getChildren().addAll(label,assetNameLbl, assetName, assetDescriptionLbl, description, buttons);
+        Label assetDescriptionLbl = new Label("Description of Asset Category");
+        TextField description = new TextField();
+
+        assetInputs.getChildren().addAll(label, assetNameLbl, assetName, assetDescriptionLbl, description, buttons);
     }
 
     public Parent getRoot() {

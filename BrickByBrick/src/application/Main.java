@@ -15,8 +15,6 @@ public class Main extends Application {
 			// Create an instance of the homeScreen class to make a new scene
 			HomeScreen homescreen = new HomeScreen(primaryStage);
 			
-			
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(new Scene(homescreen.getRoot(), 400, 400));
 			primaryStage.setTitle("Brick by Brick");
 			primaryStage.show();

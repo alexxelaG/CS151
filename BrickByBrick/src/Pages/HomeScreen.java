@@ -33,8 +33,13 @@ public class HomeScreen {
 		
 		
 		createAssetButton.setOnAction(e -> {
+			//Form
+			TextField input = new TextField(); 
+			input.getText();
+			// System.out.println(input.getText()); //debug txt input
+
+			//Layout
 			System.out.println("This is the createAssetButton");
-			
 			CreateAssetPage createAsset = new CreateAssetPage();
 			primaryStage.setScene(new Scene(createAsset.getRoot(), 400, 400));
 			primaryStage.setTitle("Create an Asset");

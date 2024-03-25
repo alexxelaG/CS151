@@ -13,14 +13,9 @@ public class ViewAssetPage {
 		root = new VBox(20);
 		root.setStyle("-fx-padding: 10px;");
 		
-		
-		
-		
 	}
-	
 	
 	public Parent getRoot() {
         return root;
     }
-	
 }
